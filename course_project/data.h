@@ -2,7 +2,7 @@
 
 // This node might be a question or an animal
 struct _node{
-	char name[200];
+	char * name;
 	
 	/*
 	For Questions:
@@ -11,7 +11,7 @@ struct _node{
 	For Animals:
 		yes and no will be NULL
 	*/
-	node* yes;
-	node* no;
+	struct _node* yes;
+	struct _node* no;
 };
 typedef struct _node node;

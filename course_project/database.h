@@ -18,7 +18,7 @@ void writeData() {
             "database.txt");
     }
     else {
-		fprintf(fp, "(\"does it live in water ?\"whale\" (\"Does it have four legs ? \" \"cat\" \"elephant\")) ");
+		fprintf(fp, "(\"does it live in water ?\"whale\" (\"Does it have four legs ? \" \"cat\" \"asem\")) ");
         // whale
         // does it live in water
 		fclose(fp);
