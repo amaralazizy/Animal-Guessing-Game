@@ -1,10 +1,8 @@
 #include <stdio.h>
-#include "database.h"
-
-
+#include "data.h"
 
 int main() {
-    //TODO: to be removed from this file
+    //TODO: this code to be removed from this file
 	FILE* fp;
 
     errno_t err;

@@ -1,17 +1,21 @@
-#include<stdio.h>
+#include <stdio.h>
+#include "data.h"
 
-// This node might be a question or an animal
-struct _node{
-	char name[200];
-	
-	/*
-	For Questions:
-		yes and no will point to either an animal or another question 
-	
-	For Animals:
-		yes and no will be NULL
-	*/
-	node* yes;
-	node* no;
-};
-typedef struct _node node;
+void writeData() {
+	FILE* fp;
+
+    errno_t err;
+
+    if ((err = fopen_s(&fp ,"database.txt", "w+")) != 0) {
+        // This indicates that the file can not be opened 
+        // will print the error message
+        fprintf(stderr, "cannot open file '%s': %s\n",
+            "database.txt");
+    }
+    else {
+		fprintf(fp, "(\"does it live in water ?\"whale\" (\"Does it have four legs ? \" \"cat\" \"elephant\")) ");
+        // whale
+        // does it live in water
+		fclose(fp);
+    }
+}
