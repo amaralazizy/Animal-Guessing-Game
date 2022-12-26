@@ -17,7 +17,8 @@ void writeData() {
         fprintf(stderr, "cannot open file '%s': %s\n",
             "database.txt");
     }
-    else {
+    else 
+    {
 		fprintf(fp, "(\"does it live in water ?\"whale\" (\"Does it have four legs ? \" \"cat\" \"asem\")) ");
         // whale
         // does it live in water
