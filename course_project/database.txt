@@ -1,2 +1,2 @@
-this is from the file
-this is the second line
+first line
+second line

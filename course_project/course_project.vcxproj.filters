@@ -26,5 +26,11 @@
     <ClInclude Include="database.h">
       <Filter>Source Files</Filter>
     </ClInclude>
+    <ClInclude Include="user_functions.h">
+      <Filter>Source Files</Filter>
+    </ClInclude>
+    <ClInclude Include="mapping.h">
+      <Filter>Source Files</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>

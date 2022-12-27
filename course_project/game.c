@@ -21,5 +21,18 @@ int main() {
 
 	q1->yes = a1;
 	q1->no = a2;
+
 	
+
+	line* head = (line*)(malloc(sizeof(line)));
+	char* temp = "this is the first line from test";
+	strcpy_s(head->text, 300, temp);
+
+	line* line1 = (line*)(malloc(sizeof(line)));
+	char* temp1 = "this is the second line from test";
+	strcpy_s(line1->text, 300, temp1);
+
+	head->next = line1;
+	line1->next = NULL;
+	writeData(filetext());
 }

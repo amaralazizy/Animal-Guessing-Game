@@ -16,7 +16,6 @@ line *filetext()
         printf("file can't be opened \n");
     }
 
-    printf("content of this file are \n");
     fgets(str, 300, ptr);
     strcpy_s(head->text, 300, str);
 
@@ -36,7 +35,7 @@ void writeData(line *lines)
 
     errno_t err;
 
-    if ((err = fopen_s(&fp, "database.txt", "a")) != 0)
+    if ((err = fopen_s(&fp, "database.txt", "w")) != 0)
     {
         // This indicates that the file can not be opened
         // will print the error message
@@ -46,8 +45,10 @@ void writeData(line *lines)
     else
     {
         line *temp = lines;
-        while (temp->next)
+        while (temp) {
             fprintf(fp, temp->text);
+            temp = temp->next;
+        }
         fclose(fp);
     }
 }

@@ -59,3 +59,5 @@ void insertLine(int index, char text[], line** head) {
 }
 
 
+
+

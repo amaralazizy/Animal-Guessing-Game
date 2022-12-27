@@ -144,6 +144,8 @@
   <ItemGroup>
     <ClInclude Include="data.h" />
     <ClInclude Include="database.h" />
+    <ClInclude Include="mapping.h" />
+    <ClInclude Include="user_functions.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
