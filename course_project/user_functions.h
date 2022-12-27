@@ -1,5 +1,6 @@
 #include "data.h"
 #include <stdlib.h>
+#include <string.h>
 
 int handle(node** q) 
 {
@@ -8,8 +9,8 @@ int handle(node** q)
 	char question[300];
 	
 	printf("%s", (*q)->name);
-	printf("Enter (Y) for yes or (N) for no");
-	scanf_s("%c", &answer);
+	printf("\nEnter (Y) for yes or (N) for no: ");
+	scanf_s(" %c", &answer);
 	if ((*q)->yes == NULL && (*q)->no == NULL) 
 	{
 		if (answer == 'N' || answer == 'n') 
@@ -18,6 +19,7 @@ int handle(node** q)
 			node* yesNewNode = (node *)malloc(sizeof(node));;
 			node* noNewNode = (node *)malloc(sizeof(node));;
 			printf("What was the animal name?");
+			getchar();
 			fgets(animal, 30, stdin);
 			printf("What should I have asked you?");
 			fgets(question, 300, stdin);
@@ -33,8 +35,8 @@ int handle(node** q)
 			* q = newnode;
 		}
 		printf("Do you want to play again?\n");
-		printf("Enter (Y) for yes or (N) for no");
-		scanf_s("%c", &answer); //Not complete yet
+		printf("Enter (Y) for yes or (N) for no: ");
+		scanf_s(" %c", &answer); //Not complete yet
 		if (answer == 'y' || answer == 'Y')
 			return 1;
 		else if (answer == 'n' || answer == 'N')
