@@ -1,6 +1,6 @@
 #include <stdio.h>
 #include<stdlib.h>
-#include "data.h"
+#include "database.h"
 
 int main() {
 	node* q1 = malloc(sizeof(node));
@@ -21,4 +21,5 @@ int main() {
 
 	q1->yes = a1;
 	q1->no = a2;
+	
 }
