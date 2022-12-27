@@ -45,7 +45,7 @@ void writeData(line *lines)
     }
     else
     {
-        line *temp = filetext();
+        line *temp = lines;
         while (temp->next)
             fprintf(fp, temp->text);
         fclose(fp);
