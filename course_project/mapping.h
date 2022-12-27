@@ -1,6 +1,6 @@
 #include <stdio.h>
+#include <string.h>
 #include "data.h"
-#include "database.h"
 
 node* linesToNodes(line* currLine) {
 	static int numLines = 0;
@@ -48,21 +48,22 @@ node* linesToNodes(line* currLine) {
 line *nodesToLines(node *currNode)
 {
 	line *currLine = (line *)(malloc(sizeof(line)));
-	currLine->text = currNode->name;
+	strcpy_s(currLine->text, 300,currNode->name);
 	if ((!currNode->yes) && (!currNode->no))
 	{
 		// this node is an animal
 		currLine->next = (line *)(malloc(sizeof(line)));
-		(currLine->next)->text = '\n';
+		char t[300] = "\n";
+		strcpy_s((currLine->next)->text , 300,t);
 		currLine->next->next = NULL;
 	}
 	else
 	{
-		currLine->next = nodesToLines(curNode->yes);
+		currLine->next = nodesToLines(currNode->yes);
 		line *temp = NULL;
 		for (temp = currLine->next; temp->next != NULL; temp = temp->next)
 			;
-		temp->next = nodesToLines(curNode->no);
+		temp->next = nodesToLines(currNode->no);
 	}
 	return currLine;
 }

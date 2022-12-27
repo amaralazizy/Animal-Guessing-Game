@@ -1,6 +1,10 @@
 #include<stdio.h>
 #include<string.h>
 
+#ifndef MYNODE_H_
+# define MYNODE_H_
+
+
 // This node might be a question or an animal
 struct _node{
 	char * name;
@@ -57,6 +61,37 @@ void insertLine(int index, char text[], line** head) {
 		temp->next = newLine;
 	}
 }
+
+void deleteLine(line** head, int position)
+{
+	line* temp;
+	line* prev;
+	temp = *head;
+	prev = *head;
+	for (int i = 0; i < position; i++) {
+		if (i == 0 && position == 0) {
+			*head = (*head)->next;
+			free(temp);
+		}
+		else {
+			if (i == position && temp) {
+				prev->next = temp->next;
+				free(temp);
+			}
+			else {
+				prev = temp;
+
+				// Position was greater than
+				// number of nodes in the list
+				if (prev == NULL)
+					break;
+				temp = temp->next;
+			}
+		}
+	}
+}
+
+#endif
 
 
 
