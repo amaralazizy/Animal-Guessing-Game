@@ -3,6 +3,28 @@
 #include <string.h>
 #include "data.h"
 
+void initDatabase() {
+    FILE* ptr;
+    fopen_s(&ptr, "database.txt", "a+");
+    //TODO: check if the file does not exist or if it is empty
+    if (NULL != ptr) {
+        fseek(ptr, 0, SEEK_END);
+        long size = ftell(ptr);
+
+        if (0 == size) {
+            fprintf(ptr, "Does it live in water? \nwhale\n\ncat\n\n");
+        }
+    }
+    fclose(ptr);
+    //TODO: if yes then write the first question:
+    //Does it live under water? 
+    //whale
+    //
+    //cat
+    //
+    //TODO: if no then return
+}
+
 line *filetext()
 {
     FILE *ptr;

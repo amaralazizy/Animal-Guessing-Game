@@ -7,7 +7,7 @@
 
 // This node might be a question or an animal
 struct _node{
-	char * name;
+	char name[300];
 	
 	/*
 	For Questions:
